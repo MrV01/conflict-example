@@ -31,3 +31,931 @@ Merge made by the 'recursive' strategy.
  test2.txt                | 1 +
  2 files changed, 1 insertion(+), 1 deletion(-)
  create mode 100644 test2.txt
+=============================================================
+Raw materials:
+=============================================================
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (master)
+$ git push
+Everything up-to-date
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (master)
+$ git checkout testfeatureBranch
+Switched to branch 'testfeatureBranch'
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ touch testfeatureBranch_file1.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        testfeatureBranch_file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git add -A
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   testfeatureBranch_file1.txt
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git commit -m "added testfeatureBranch_file1.txt"
+[testfeatureBranch c688a71] added testfeatureBranch_file1.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 testfeatureBranch_file1.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/MrV01/conflict-example
+   f13c9a4..2c99925  master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> testfeatureBranch
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ ls
+AvoidingGitConflicts.txt  index.html  LICENSE  testfeatureBranch_file1.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git push
+fatal: The current branch testfeatureBranch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin testfeatureBranch
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git push --set-upstream origin testfeatureBranch
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/MrV01/conflict-example.git
+ * [new branch]      testfeatureBranch -> testfeatureBranch
+Branch testfeatureBranch set up to track remote branch testfeatureBranch from origin.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+Your branch is up-to-date with 'origin/testfeatureBranch'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ ls
+AvoidingGitConflicts.txt  index.html  LICENSE  testfeatureBranch_file1.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git pull master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git pull origin master
+From https://github.com/MrV01/conflict-example
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ AvoidingGitConflicts.txt | 1 -
+ test2.txt                | 1 +
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 test2.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+Your branch is ahead of 'origin/testfeatureBranch' by 3 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ ls
+AvoidingGitConflicts.txt  index.html  LICENSE  test2.txt  testfeatureBranch_file1.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git push
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 360 bytes | 0 bytes/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/MrV01/conflict-example.git
+   c688a71..1ed03bf  testfeatureBranch -> testfeatureBranch
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git branch
+  master
+* testfeatureBranch
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+Your branch is up-to-date with 'origin/testfeatureBranch'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   AvoidingGitConflicts.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git add -A
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+Your branch is up-to-date with 'origin/testfeatureBranch'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   AvoidingGitConflicts.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   AvoidingGitConflicts.txt
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git add -A
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git commit -m "Added first example to 1. Run the "git pull" command often."
+error: pathspec 'pull command often.' did not match any file(s) known to git.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git commit -m "Added first example to 1. Run the git pull command often."
+[testfeatureBranch 6019bfe] Added first example to 1. Run the git pull command often.
+ 1 file changed, 18 insertions(+)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 966 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/MrV01/conflict-example.git
+   1ed03bf..6019bfe  testfeatureBranch -> testfeatureBranch
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$
+=================================================================================================================
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy
+$ mkdir conflict-example
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy
+$ ls -l welcome-to-git/
+total 4
+drwxr-xr-x 1 Vlad 197609   0 Feb 18 21:48 css/
+drwxr-xr-x 1 Vlad 197609   0 Feb 18 21:48 images/
+-rw-r--r-- 1 Vlad 197609 731 Feb 18 21:48 index.html
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy
+$ cd conflict-example/
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example
+$ cd conflict-example/
+bash: cd: conflict-example/: No such file or directory
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example (master)
+$ cd conflict-example/
+bash: cd: conflict-example/: No such file or directory
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example
+$ ls
+MrV01/  V-3-V/
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example
+$ cd MrV01/
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01
+$  git clone https://github.com/MrV01/conflict-example.git
+fatal: destination path 'conflict-example' already exists and is not an empty directory.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01
+$ ls
+conflict-example/
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01
+$ rm -rf conflict-example
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01
+$  git clone https://github.com/MrV01/conflict-example.git
+Cloning into 'conflict-example'...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Checking connectivity... done.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01
+$ cd conflict-example/
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git remote -v
+origin  https://github.com/MrV01/conflict-example.git (fetch)
+origin  https://github.com/MrV01/conflict-example.git (push)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ ls
+LICENSE
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git config --local
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git config --local  -l
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/MrV01/conflict-example.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git config --local user.name "MrV01"
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git config --local user.email "VladV454@gmail.com"
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git config --local  -l
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/MrV01/conflict-example.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+user.name=MrV01
+user.email=VladV454@gmail.com
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull -v
+From https://github.com/MrV01/conflict-example
+ = [up to date]      master     -> origin/master
+Already up-to-date.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ touch index.html
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git add -A
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   index.html
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git commit -m 'Initial commit'
+[master fd53a22] Initial commit
+ 1 file changed, 6 insertions(+)
+ create mode 100644 index.html
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 309 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/MrV01/conflict-example.git
+   bde78c8..fd53a22  master -> master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ ls
+index.html  LICENSE
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/MrV01/conflict-example
+   fd53a22..73d92cb  master     -> origin/master
+Updating fd53a22..73d92cb
+Fast-forward
+ index.html | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git add -A
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   index.html
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git commit -m "added Six Seven by MrV01"
+[master 4a925c3] added Six Seven by MrV01
+ 1 file changed, 2 insertions(+)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 366 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/MrV01/conflict-example.git
+   73d92cb..4a925c3  master -> master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git satus
+git: 'satus' is not a git command. See 'git --help'.
+
+Did you mean this?
+        status
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull
+Already up-to-date.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git add -A
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git commit -m "  4 and 5 Commented by MrV01"
+[master 22d93eb]   4 and 5 Commented by MrV01
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git push
+To https://github.com/MrV01/conflict-example.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/MrV01/conflict-example.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/MrV01/conflict-example
+ * branch            master     -> FETCH_HEAD
+   4a925c3..0be0967  master     -> origin/master
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master|MERGING)
+$ git statu
+git: 'statu' is not a git command. See 'git --help'.
+
+Did you mean one of these?
+        status
+        stage
+        stash
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master|MERGING)
+$ git add -A
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+        modified:   index.html
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master|MERGING)
+$ git commit -m " 3 4 5 conflicts has been resolved by MrV01"
+[master 6e809c8]  3 4 5 conflicts has been resolved by MrV01
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git push
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 705 bytes | 0 bytes/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local objects.
+To https://github.com/MrV01/conflict-example.git
+   0be0967..6e809c8  master -> master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git add -A
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git commit -m " 8 string added by MrV01"
+[master 7556cbb]  8 string added by MrV01
+ 1 file changed, 1 insertion(+)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 322 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/MrV01/conflict-example.git
+   6e809c8..7556cbb  master -> master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 2), reused 6 (delta 2), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/MrV01/conflict-example
+   7556cbb..b1a3ff2  master     -> origin/master
+Updating 7556cbb..b1a3ff2
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/MrV01/conflict-example
+   b1a3ff2..8286d56  master     -> origin/master
+Updating b1a3ff2..8286d56
+Fast-forward
+ AvoidingGitConflicts.txt | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 AvoidingGitConflicts.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git branc
+git: 'branc' is not a git command. See 'git --help'.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git branch
+* master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/MrV01/conflict-example
+   8286d56..f13c9a4  master     -> origin/master
+Updating 8286d56..f13c9a4
+Fast-forward
+ AvoidingGitConflicts.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git branch
+* master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull
+Already up-to-date.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull
+Already up-to-date.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git branch
+* master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ touch test2.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ vi test2.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git add -A
+warning: LF will be replaced by CRLF in test2.txt.
+The file will have its original line endings in your working directory.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   test2.txt
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git commit -m "added test2.txt"
+[master 2c99925] added test2.txt
+warning: LF will be replaced by CRLF in test2.txt.
+The file will have its original line endings in your working directory.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test2.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 278 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/MrV01/conflict-example.git
+   f13c9a4..2c99925  master -> master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 5 (delta 2), reused 5 (delta 2), pack-reused 0
+Unpacking objects: 100% (5/5), done.
+From https://github.com/MrV01/conflict-example
+ * [new branch]      testfeatureBranch -> origin/testfeatureBranch
+Already up-to-date.
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git branch
+* master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull origin testfeatureBranch
+From https://github.com/MrV01/conflict-example
+ * branch            testfeatureBranch -> FETCH_HEAD
+Updating 2c99925..1ed03bf
+Fast-forward
+ testfeatureBranch_file1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 testfeatureBranch_file1.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ branch
+bash: branch: command not found
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git branch
+* master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/MrV01/conflict-example.git
+   2c99925..1ed03bf  master -> master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git pull origin testfeatureBranch
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/MrV01/conflict-example
+ * branch            testfeatureBranch -> FETCH_HEAD
+   1ed03bf..6019bfe  testfeatureBranch -> origin/testfeatureBranch
+Updating 1ed03bf..6019bfe
+Fast-forward
+ AvoidingGitConflicts.txt | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ ls -l
+total 11
+-rw-r--r-- 1 Vlad 197609 1339 Mar 29 15:20 AvoidingGitConflicts.txt
+-rw-r--r-- 1 Vlad 197609  391 Mar 29 14:13 index.html
+-rw-r--r-- 1 Vlad 197609 1082 Mar 29 12:36 LICENSE
+-rw-r--r-- 1 Vlad 197609   18 Mar 29 14:42 test2.txt
+-rw-r--r-- 1 Vlad 197609   16 Mar 29 15:12 testfeatureBranch_file1.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ tail -f AvoidingGitConflicts.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git pull origin master
+From https://github.com/MrV01/conflict-example
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ AvoidingGitConflicts.txt | 1 -
+ test2.txt                | 1 +
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 test2.txt
+
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ less AvoidingGitConflicts.txt
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git checkout testfeatureBranch
+Branch testfeatureBranch set up to track remote branch testfeatureBranch from origin.
+Switched to a new branch 'testfeatureBranch'
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (testfeatureBranch)
+$ git status
+On branch testfeatureBranch
+Your branch is up-to-date with 'origin/testfeatureBranch'.
+nothing to commit, working tree clean
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (testfeatureBranch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/MrV01/conflict-example.git
+   1ed03bf..6019bfe  master -> master
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/MrV01/conflict-example (master)
