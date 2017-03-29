@@ -1,0 +1,16 @@
+TIPS regarding Avoiding Conflicts in GIT.
+
+1. Run the "git pull" command often.
+        To avoid painful long merge sessions,
+        by the finish of long complex branch development.
+2. Communicate with you team.
+          which file(s) and feature(s) are modified/developed
+          by whom?
+3. Standardize white space settings in text-editors.
+
+4. Think of "git merge" as a two way street.
+      Team members continue to work with master brunch while
+      you are working with you own particular branch.
+      Keep local master and other branches synchronized,
+      to make final merge quick and easy :-)
+          
