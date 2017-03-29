@@ -13,4 +13,3 @@ TIPS regarding Avoiding Conflicts in GIT.
       you are working with you own particular branch.
       Keep local master and other branches synchronized,
       to make final merge quick and easy :-)
-          
