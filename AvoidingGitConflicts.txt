@@ -13,3 +13,21 @@ TIPS regarding Avoiding Conflicts in GIT.
       you are working with you own particular branch.
       Keep local master and other branches synchronized,
       to make final merge quick and easy :-)
+
+===================================================
+Examples:
+===================================================
+
+RE:  1. Run the "git pull" command often.
+
+  Note: It is possible to git pull of origin master, being in checking out of other branch
+
+Vlad@openareadesktop MINGW64 ~/Documents/PROGRAMMING/HTML5/GitAWebDeveloperJobUdemy/conflict-example/V-3-V/conflict-example (testfeatureBranch)
+$ git pull origin master
+From https://github.com/MrV01/conflict-example
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ AvoidingGitConflicts.txt | 1 -
+ test2.txt                | 1 +
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 test2.txt
